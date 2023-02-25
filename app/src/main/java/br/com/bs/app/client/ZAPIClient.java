@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(
         name = "z-api",
-        url = "https://api.z-api.io/instances/3B96698E7937D0E31141C24260D5D464/token/524AE59E839C77C330EED53D/"
+        url = "https://api.z-api.io/instances/3B976F2A4D6D10D7EBE95ECBD9C20C92/token/226209EC08C7309758085967/"
 )
 public interface ZAPIClient {
 
