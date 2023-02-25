@@ -6,6 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(
         name = "z-api",
@@ -19,6 +20,6 @@ public interface ZAPIClient {
     @PostMapping("send-image")
     public ResponseEntity<ZMessageResponse> sendImage(@RequestBody ZMessageRequest zMessageRequest);
 
-    @PostMapping("send-document/pdf")
-    public ResponseEntity<ZMessageResponse> sendPDF(@RequestBody ZMessageRequest zMessageRequest);
+    @PostMapping("send-document/{documentType}")
+    public ResponseEntity<ZMessageResponse> sendFile(@RequestParam String documentType, @RequestBody ZMessageRequest zMessageRequest);
 }

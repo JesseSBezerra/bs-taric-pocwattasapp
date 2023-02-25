@@ -1,5 +1,6 @@
 package br.com.bs.app.controller;
 
+import br.com.bs.app.enums.DocumentType;
 import br.com.bs.app.payload.ZMessageRequest;
 import br.com.bs.app.service.ZMessageService;
 import io.swagger.annotations.ApiOperation;
@@ -40,13 +41,14 @@ public class ZMessageController {
         return ResponseEntity.ok().body(service.sendImage(phone,file));
     }
 
-    @ApiOperation("Envia um pdf para o telefone informado")
+    @ApiOperation("Envia um arquivo para o telefone informado")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),
     })
     @PostMapping("pdf")
     public ResponseEntity sendPDF(@RequestParam String phone,
-                                    @RequestParam MultipartFile file) throws IOException {
-        return ResponseEntity.ok().body(service.sendPDF(phone,file));
+                                  @RequestParam MultipartFile file,
+                                  @RequestParam DocumentType documentType) throws IOException {
+        return ResponseEntity.ok().body(service.sendFile(phone,file,documentType));
     }
 }

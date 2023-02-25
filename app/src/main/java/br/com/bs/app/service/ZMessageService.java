@@ -2,16 +2,17 @@ package br.com.bs.app.service;
 
 import br.com.bs.app.client.ZAPIClient;
 import br.com.bs.app.command.Base64ConverterCommand;
+import br.com.bs.app.enums.DocumentType;
 import br.com.bs.app.payload.ZMessageResponse;
 import br.com.bs.app.payload.ZMessageRequest;
 import br.com.bs.app.util.Constante;
-import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
+import java.util.Optional;
 
 @Service
 public class ZMessageService {
@@ -36,12 +37,18 @@ public class ZMessageService {
         return  response.getBody();
     }
 
-    public ZMessageResponse sendPDF(String phone, MultipartFile file) throws IOException {
+    public ZMessageResponse sendFile(String phone, MultipartFile file, DocumentType documentType) throws IOException {
         var arquivo = base64ConverterCommand.converter(file);
         ZMessageRequest request = new ZMessageRequest();
         request.setPhone(phone);
-        request.setDocument(Constante.BASE64_PDF.concat(arquivo));
-        var response = client.sendPDF(request);
-        return  response.getBody();
+        ResponseEntity<ZMessageResponse> response = ResponseEntity.of(Optional.empty());
+        if(documentType.equals(DocumentType.PDF)) {
+            request.setDocument(Constante.BASE64_PDF.concat(arquivo));
+            response = client.sendFile("pdf", request);
+        } else if (documentType.equals(DocumentType.DOCX)) {
+            request.setDocument(Constante.BASE64_DOCX.concat(arquivo));
+            response = client.sendFile("docx", request);
+        }
+        return response.getBody();
     }
 }
