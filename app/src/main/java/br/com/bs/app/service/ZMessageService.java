@@ -33,6 +33,11 @@ public class ZMessageService {
         return  response.getBody();
     }
 
+    public ZMessageResponse sendButtonList(ZMessageRequest request){
+        var response = client.sendButtonList(request);
+        return  response.getBody();
+    }
+
     public ZMessageResponse sendContact(ZMessageRequest request){
         var response = client.sendContact(request);
         return  response.getBody();

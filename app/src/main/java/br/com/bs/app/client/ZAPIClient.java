@@ -23,6 +23,9 @@ public interface ZAPIClient {
     @PostMapping("send-option-list")
     public ResponseEntity<ZMessageResponse> sendOptionList(@RequestBody ZMessageRequest zMessageRequest);
 
+    @PostMapping("send-button-list")
+    public ResponseEntity<ZMessageResponse> sendButtonList(@RequestBody ZMessageRequest zMessageRequest);
+
     @PostMapping("send-image")
     public ResponseEntity<ZMessageResponse> sendImage(@RequestBody ZMessageRequest zMessageRequest);
 
