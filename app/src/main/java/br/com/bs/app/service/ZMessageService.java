@@ -47,6 +47,15 @@ public class ZMessageService {
         return  response.getBody();
     }
 
+    public ZMessageResponse sendAudio(String phone, MultipartFile file) throws IOException {
+        var image = base64ConverterCommand.converter(file);
+        ZMessageRequest request = new ZMessageRequest();
+        request.setPhone(phone);
+        request.setAudio(Constante.BASE64_AUDIO.concat(image));
+        var response = client.sendAudio(request);
+        return  response.getBody();
+    }
+
     public ZMessageResponse sendFile(String phone, MultipartFile file, DocumentType documentType) throws IOException {
         var arquivo = base64ConverterCommand.converter(file);
         ZMessageRequest request = new ZMessageRequest();
