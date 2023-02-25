@@ -31,6 +31,15 @@ public class ZMessageController {
         return ResponseEntity.ok().body(service.sendMessage(request));
     }
 
+    @ApiOperation("Envia um contato para o telefone informado")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK"),
+    })
+    @PostMapping("contact")
+    public ResponseEntity sendContact(@Valid @RequestBody ZMessageRequest request) {
+        return ResponseEntity.ok().body(service.sendContact(request));
+    }
+
     @ApiOperation("Envia uma imagem para o telefone informado")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),

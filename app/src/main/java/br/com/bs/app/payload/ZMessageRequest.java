@@ -14,5 +14,7 @@ public class ZMessageRequest {
     private String message;
     private String image;
     private String document;
+    private String contactName;
+    private String contactPhone;
 
 }

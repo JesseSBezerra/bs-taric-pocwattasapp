@@ -28,6 +28,11 @@ public class ZMessageService {
        return  response.getBody();
     }
 
+    public ZMessageResponse sendContact(ZMessageRequest request){
+        var response = client.sendContact(request);
+        return  response.getBody();
+    }
+
     public ZMessageResponse sendImage(String phone, MultipartFile file) throws IOException {
         var image = base64ConverterCommand.converter(file);
         ZMessageRequest request = new ZMessageRequest();
