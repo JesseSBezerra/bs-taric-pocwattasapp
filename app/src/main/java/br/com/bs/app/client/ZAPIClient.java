@@ -20,6 +20,9 @@ public interface ZAPIClient {
     @PostMapping("send-contact")
     public ResponseEntity<ZMessageResponse> sendContact(@RequestBody ZMessageRequest zMessageRequest);
 
+    @PostMapping("send-option-list")
+    public ResponseEntity<ZMessageResponse> sendOptionList(@RequestBody ZMessageRequest zMessageRequest);
+
     @PostMapping("send-image")
     public ResponseEntity<ZMessageResponse> sendImage(@RequestBody ZMessageRequest zMessageRequest);
 

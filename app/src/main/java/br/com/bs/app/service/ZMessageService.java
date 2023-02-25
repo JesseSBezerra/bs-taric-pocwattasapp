@@ -28,6 +28,11 @@ public class ZMessageService {
        return  response.getBody();
     }
 
+    public ZMessageResponse sendOptionList(ZMessageRequest request){
+        var response = client.sendOptionList(request);
+        return  response.getBody();
+    }
+
     public ZMessageResponse sendContact(ZMessageRequest request){
         var response = client.sendContact(request);
         return  response.getBody();

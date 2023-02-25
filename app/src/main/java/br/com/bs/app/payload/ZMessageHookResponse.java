@@ -24,4 +24,10 @@ public class ZMessageHookResponse {
     public boolean broadcast;
     public String type;
     public ZMessageHookResponseText text;
+    public ZMessageHookResponseDocument document;
+    public ZMessageHookResponseVideo video;
+    public ZMessageHookResponseContact contact;
+    public ZMessageHookResponseImage image;
+    public ZMessageHookResponseAudio audio;
+    public ZMessageHookResponseListOptions listResponseMessage;
 }

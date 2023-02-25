@@ -29,6 +29,15 @@ public class ZMessageController {
         return ResponseEntity.ok().body(service.sendMessage(request));
     }
 
+    @ApiOperation("Envia uma lista de opções para seleção do telefone informado")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK"),
+    })
+    @PostMapping("option-list")
+    public ResponseEntity sendOptionList(@Valid @RequestBody ZMessageRequest request) {
+        return ResponseEntity.ok().body(service.sendOptionList(request));
+    }
+
     @ApiOperation("Envia um contato para o telefone informado")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),

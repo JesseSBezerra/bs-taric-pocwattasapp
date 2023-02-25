@@ -16,5 +16,6 @@ public class ZMessageRequest {
     private String document;
     private String contactName;
     private String contactPhone;
+    private ZMessageRequestOptionList optionList;
 
 }
