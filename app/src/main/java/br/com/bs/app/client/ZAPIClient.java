@@ -15,4 +15,10 @@ public interface ZAPIClient {
 
     @PostMapping("send-messages")
     public ResponseEntity<ZMessageResponse> sendMessage(@RequestBody ZMessageRequest zMessageRequest);
+
+    @PostMapping("send-image")
+    public ResponseEntity<ZMessageResponse> sendImage(@RequestBody ZMessageRequest zMessageRequest);
+
+    @PostMapping("send-document/pdf")
+    public ResponseEntity<ZMessageResponse> sendPDF(@RequestBody ZMessageRequest zMessageRequest);
 }
