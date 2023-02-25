@@ -1,3 +1,17 @@
 server:
   port: 9002
 
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+
+  feign:
+    autoconfiguration:
+      jackson:
+        enabled: true
+    client:
+      config:
+        default:
+          connectTimeout: 160000
+          readTimeout: 110000
