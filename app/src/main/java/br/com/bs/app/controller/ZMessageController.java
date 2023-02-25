@@ -29,6 +29,15 @@ public class ZMessageController {
         return ResponseEntity.ok().body(service.sendMessage(request));
     }
 
+    @ApiOperation("Envia uma mensagem que contém um link de acesso.")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK"),
+    })
+    @PostMapping("link")
+    public ResponseEntity sendLink(@Valid @RequestBody ZMessageRequest request) {
+        return ResponseEntity.ok().body(service.sendLink(request));
+    }
+
     @ApiOperation("Envia uma lista de opções para seleção do telefone informado")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),
