@@ -66,6 +66,16 @@ public class ZMessageController {
         return ResponseEntity.ok().body(service.sendImage(phone,file));
     }
 
+    @ApiOperation("Envia um audio para o telefone informado")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK"),
+    })
+    @PostMapping("audio")
+    public ResponseEntity sendAudio(@RequestParam String phone,
+                                    @RequestParam MultipartFile file) throws IOException {
+        return ResponseEntity.ok().body(service.sendAudio(phone,file));
+    }
+
     @ApiOperation("Envia um arquivo para o telefone informado")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),
