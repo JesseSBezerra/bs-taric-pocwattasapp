@@ -39,3 +39,7 @@
 <li> Endpoints: </li>
 O arquivo contendo todos as chamadas realizadas no postaman se encontra em 
 https://github.com/JesseSBezerra/bs-taric-pocwattasapp/tree/main/insomnia
+
+###Desenvolvido por:
+<li> Anderson Bezerra Neri
+<li> Jessé dos Santos Bezerra
