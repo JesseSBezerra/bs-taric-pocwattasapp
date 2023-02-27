@@ -31,6 +31,7 @@
 <li> JUnit5 </li>
 <li> Mockito </li>
 <li> Z-API </li>
+<li> SWAGGER </li>
 
 </br>
   OBS: Para se obter o token e a instancia deverá ser acessado: https://app.z-api.io/app/auth/new-account e realizar o cadastro de uma conta beta.
@@ -40,6 +41,8 @@
 <li> Endpoints: </li>
 O arquivo contendo todos as chamadas realizadas no postaman se encontra em 
 https://github.com/JesseSBezerra/bs-taric-pocwattasapp/tree/main/insomnia
+<li> Endereço do Swagger: </li>
+http://localhost:9002/swagger-ui.html#/z-message-controller
 
 ## Desenvolvido por:
 <li> Anderson Bezerra Neri
