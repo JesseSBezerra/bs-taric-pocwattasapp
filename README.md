@@ -33,6 +33,7 @@
 
 </br>
   OBS: Para se obter o token e a instancia deverá ser acessado: https://app.z-api.io/app/auth/new-account e realizar o cadastro de uma conta beta.
+  <li>O prjeto encontra-se na pasta app
   <li> A aplicação roda na porta 9002
 </br>
 <li> Endpoints: </li>
