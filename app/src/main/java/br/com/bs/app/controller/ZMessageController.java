@@ -33,7 +33,7 @@ public class ZMessageController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),
     })
-    @PostMapping("link")
+    @PostMapping("link") 
     public ResponseEntity sendLink(@Valid @RequestBody ZMessageRequest request) {
         return ResponseEntity.ok().body(service.sendLink(request));
     }
