@@ -7,7 +7,7 @@
 
 </div>
 
-![Logo do Markdown](https://github.com/JesseSBezerra/desafio_zitrus/blob/master/projetoZitrus.gif?raw=true)
+![Logo do Markdown](https://github.com/JesseSBezerra/bs-taric-pocwattasapp/blob/main/midia/poc-taric.gif?raw=true)
 
 <p align="center">
 <img src="https://img.shields.io/badge/Bootstrap%20-%23F7DF1E.svg?&style=for-the-badge&color=7044A3" />&nbsp;&nbsp;
